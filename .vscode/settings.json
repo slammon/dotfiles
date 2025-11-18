@@ -1,3 +1,5 @@
 {
-    "workbench.colorTheme": "Pitch Black"
+    "workbench.colorTheme": "Pitch Black",
+    "editor.parameterHints.enabled": false,
+    "editor.hover.enabled": false
 }  
