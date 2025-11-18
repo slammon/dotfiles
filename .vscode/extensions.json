@@ -9,6 +9,7 @@
     "ms-python.python",
     "ms-python.vscode-pylance",
     "rust-lang.rust-analyzer",
-    "stephkeys.mermaid-theme"
+    "stephkeys.mermaid-theme",
+    "viktorqvarfordt.vscode-pitch-black-theme"
   ]
 }
