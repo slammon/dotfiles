@@ -1,0 +1,24 @@
+{
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.github-vscode-theme",
+        "github.vscode-pull-request-github",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "rust-lang.rust-analyzer",
+        "esbenp.prettier-vscode",
+        "viktorqvarfordt.vscode-pitch-black-theme"
+      ],
+      "settings": {
+        "workbench.colorTheme": "Pitch Black",
+        "editor.parameterHints.enabled": false,
+        "editor.hover.enabled": false
+      }
+    }
+  }
+}
