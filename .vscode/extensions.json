@@ -9,6 +9,7 @@
     "ms-python.python",
     "ms-python.vscode-pylance",
     "rust-lang.rust-analyzer",
+    "esbenp.prettier-vscode",
     "viktorqvarfordt.vscode-pitch-black-theme"
   ]
 }
