@@ -1,21 +1,17 @@
 py() {
-  python3 "$@"
-}
-
-pif() {
-  pip freeze > "$@"
+  if [[ $# -eq 0 ]]; then
+    command python3 main.py
+  else
+    command python3 "$@"
+  fi
 }
 
 rs() {
-  cargo run "$@"
+  command cargo run "$@"
 }
 
 rsb() {
-  cargo build --release --target-dir .target "$@"
-}
-
-mvenv() {
-  bash ~/.venv.sh
+  command cargo build --release --target-dir .target "$@"
 }
 
 twee() {
@@ -23,14 +19,19 @@ twee() {
   #you can use -f btw
 }
 
-cls() {
-  clear
-  #im lwk schitzo
-}
+if [[ -t 1 ]]; then
+  alias grep='grep --color=auto'
+  alias ls='command ls --color=auto'
+  alias dir='command dir --color=auto'
+fi
 
-upd() {
-  sudo apt update && sudo apt upgrade -y
-}
+alias mvenv='bash ~/.venv.sh'
+alias pif='pip freeze > requirements.txt'
+alias cls='clear'
+alias upd='sudo apt update && sudo apt upgrade -y'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
 is() {
   [[ $# -lt 1 ]] && { echo "usage: is <path> [...]" >&2; return 1; }
@@ -48,16 +49,10 @@ is() {
   return $status
 }
 
-#idk if i really want this rn lmao
-#root dir on launch
-#if [[ $- == *i* ]]; then
-#  cd /
-#fi
+shopt -s cdspell
+shopt -s cmdhist
+shopt -s histappend
 
-
-# truecolor (exact)
-export PS1="\[\e[38;2;246;173;198m\]\u\[\e[38;2;173;246;221m\]@\h\[\e[0m\]:\[\e[38;5;117m\] \w\[\e[0m\]\$ "
-# 256-color (approx)
-#export PS1="\[\e[38;5;218m\]\u\[\e[38;5;158m\]@\h\[\e[0m\]:\[\e[38;5;117m\] \w\[\e[0m\]\$ "
+export PS1="\[\e[38;2;246;173;198m\]\u\[\e[38;2;154;183;255m\]@\h\[\e[0m\]:\[\e[38;5;117m\] \w\[\e[0m\]\$ "
 
 export PIP_BREAK_SYSTEM_PACKAGES=1
